@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.grp_Perso = new System.Windows.Forms.GroupBox();
-            this.grp_Abs = new System.Windows.Forms.GroupBox();
-            this.grp_Deconnect = new System.Windows.Forms.GroupBox();
-            this.grp_Connect = new System.Windows.Forms.GroupBox();
-            this.btn_Connect = new System.Windows.Forms.Button();
-            this.txt_MotDePasse = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_Identifiant = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_error = new System.Windows.Forms.Label();
-            this.lbl_Identifiant = new System.Windows.Forms.Label();
-            this.btn_Deconnect = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lst_Perso = new System.Windows.Forms.ListBox();
-            this.btn_Perso_Ajouter = new System.Windows.Forms.Button();
-            this.btn_Perso_Modifer = new System.Windows.Forms.Button();
             this.btn_Perso_Supprimer = new System.Windows.Forms.Button();
-            this.grp_Perso_Ajout = new System.Windows.Forms.GroupBox();
-            this.txt_Perso_Ajout_Nom = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_Perso_Ajout_Prenom = new System.Windows.Forms.TextBox();
-            this.txt_Perso_Ajout_Tel = new System.Windows.Forms.TextBox();
-            this.txt_Perso_Ajout_Mail = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmb_Perso_Ajout_Affectation = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btn_Perso8ajout_Annuler = new System.Windows.Forms.Button();
-            this.btn_Peso_Ajout_Valider = new System.Windows.Forms.Button();
+            this.btn_Perso_Modifer = new System.Windows.Forms.Button();
+            this.btn_Perso_Ajouter = new System.Windows.Forms.Button();
+            this.lst_Perso = new System.Windows.Forms.ListBox();
+            this.grp_Abs = new System.Windows.Forms.GroupBox();
             this.btn_Abs_Supprimer = new System.Windows.Forms.Button();
+            this.lst_Abs = new System.Windows.Forms.ListBox();
             this.btn_Abs_Modifier = new System.Windows.Forms.Button();
             this.btn_Abs_Ajouter = new System.Windows.Forms.Button();
-            this.lst_Abs = new System.Windows.Forms.ListBox();
+            this.grp_Deconnect = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_Deconnect = new System.Windows.Forms.Button();
+            this.lbl_Identifiant = new System.Windows.Forms.Label();
+            this.grp_Connect = new System.Windows.Forms.GroupBox();
+            this.lbl_error = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_Identifiant = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_MotDePasse = new System.Windows.Forms.TextBox();
+            this.btn_Connect = new System.Windows.Forms.Button();
+            this.grp_Perso_Ajout = new System.Windows.Forms.GroupBox();
+            this.btn_Peso_Ajout_Valider = new System.Windows.Forms.Button();
+            this.btn_Perso8ajout_Annuler = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmb_Perso_Ajout_Affectation = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_Perso_Ajout_Mail = new System.Windows.Forms.TextBox();
+            this.txt_Perso_Ajout_Tel = new System.Windows.Forms.TextBox();
+            this.txt_Perso_Ajout_Prenom = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_Perso_Ajout_Nom = new System.Windows.Forms.TextBox();
             this.grp_Abs_Ajout = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtp_Abs_Debut = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtp_Abs_Fin = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_Abs_Ajout_Motif = new System.Windows.Forms.ComboBox();
             this.btn_Abs_Ajout_Valider = new System.Windows.Forms.Button();
+            this.cmb_Abs_Ajout_Motif = new System.Windows.Forms.ComboBox();
             this.btn_Abs_Ajout_Annuler = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtp_Abs_Fin = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtp_Abs_Debut = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.grp_Perso.SuspendLayout();
             this.grp_Abs.SuspendLayout();
             this.grp_Deconnect.SuspendLayout();
@@ -92,6 +92,43 @@
             this.grp_Perso.TabStop = false;
             this.grp_Perso.Text = "Personnel";
             // 
+            // btn_Perso_Supprimer
+            // 
+            this.btn_Perso_Supprimer.Location = new System.Drawing.Point(171, 380);
+            this.btn_Perso_Supprimer.Name = "btn_Perso_Supprimer";
+            this.btn_Perso_Supprimer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Perso_Supprimer.TabIndex = 3;
+            this.btn_Perso_Supprimer.Text = "Supprimer";
+            this.btn_Perso_Supprimer.UseVisualStyleBackColor = true;
+            // 
+            // btn_Perso_Modifer
+            // 
+            this.btn_Perso_Modifer.Location = new System.Drawing.Point(89, 380);
+            this.btn_Perso_Modifer.Name = "btn_Perso_Modifer";
+            this.btn_Perso_Modifer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Perso_Modifer.TabIndex = 2;
+            this.btn_Perso_Modifer.Text = "Modifier";
+            this.btn_Perso_Modifer.UseVisualStyleBackColor = true;
+            this.btn_Perso_Modifer.Click += new System.EventHandler(this.btn_Perso_Modifer_Click);
+            // 
+            // btn_Perso_Ajouter
+            // 
+            this.btn_Perso_Ajouter.Location = new System.Drawing.Point(8, 381);
+            this.btn_Perso_Ajouter.Name = "btn_Perso_Ajouter";
+            this.btn_Perso_Ajouter.Size = new System.Drawing.Size(75, 23);
+            this.btn_Perso_Ajouter.TabIndex = 1;
+            this.btn_Perso_Ajouter.Text = "Ajouter";
+            this.btn_Perso_Ajouter.UseVisualStyleBackColor = true;
+            this.btn_Perso_Ajouter.Click += new System.EventHandler(this.btn_Perso_Ajouter_Click);
+            // 
+            // lst_Perso
+            // 
+            this.lst_Perso.FormattingEnabled = true;
+            this.lst_Perso.Location = new System.Drawing.Point(6, 19);
+            this.lst_Perso.Name = "lst_Perso";
+            this.lst_Perso.Size = new System.Drawing.Size(238, 355);
+            this.lst_Perso.TabIndex = 0;
+            // 
             // grp_Abs
             // 
             this.grp_Abs.Controls.Add(this.btn_Abs_Supprimer);
@@ -105,6 +142,43 @@
             this.grp_Abs.TabStop = false;
             this.grp_Abs.Text = "Absence";
             // 
+            // btn_Abs_Supprimer
+            // 
+            this.btn_Abs_Supprimer.Location = new System.Drawing.Point(189, 377);
+            this.btn_Abs_Supprimer.Name = "btn_Abs_Supprimer";
+            this.btn_Abs_Supprimer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abs_Supprimer.TabIndex = 7;
+            this.btn_Abs_Supprimer.Text = "Supprimer";
+            this.btn_Abs_Supprimer.UseVisualStyleBackColor = true;
+            // 
+            // lst_Abs
+            // 
+            this.lst_Abs.FormattingEnabled = true;
+            this.lst_Abs.Location = new System.Drawing.Point(6, 16);
+            this.lst_Abs.Name = "lst_Abs";
+            this.lst_Abs.Size = new System.Drawing.Size(281, 355);
+            this.lst_Abs.TabIndex = 4;
+            // 
+            // btn_Abs_Modifier
+            // 
+            this.btn_Abs_Modifier.Location = new System.Drawing.Point(107, 377);
+            this.btn_Abs_Modifier.Name = "btn_Abs_Modifier";
+            this.btn_Abs_Modifier.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abs_Modifier.TabIndex = 6;
+            this.btn_Abs_Modifier.Text = "Modifier";
+            this.btn_Abs_Modifier.UseVisualStyleBackColor = true;
+            this.btn_Abs_Modifier.Click += new System.EventHandler(this.btn_Abs_Modifier_Click);
+            // 
+            // btn_Abs_Ajouter
+            // 
+            this.btn_Abs_Ajouter.Location = new System.Drawing.Point(26, 378);
+            this.btn_Abs_Ajouter.Name = "btn_Abs_Ajouter";
+            this.btn_Abs_Ajouter.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abs_Ajouter.TabIndex = 5;
+            this.btn_Abs_Ajouter.Text = "Ajouter";
+            this.btn_Abs_Ajouter.UseVisualStyleBackColor = true;
+            this.btn_Abs_Ajouter.Click += new System.EventHandler(this.btn_Abs_Ajouter_Click);
+            // 
             // grp_Deconnect
             // 
             this.grp_Deconnect.Controls.Add(this.label4);
@@ -115,6 +189,34 @@
             this.grp_Deconnect.Size = new System.Drawing.Size(247, 69);
             this.grp_Deconnect.TabIndex = 2;
             this.grp_Deconnect.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Bienvenue,";
+            // 
+            // btn_Deconnect
+            // 
+            this.btn_Deconnect.Location = new System.Drawing.Point(6, 40);
+            this.btn_Deconnect.Name = "btn_Deconnect";
+            this.btn_Deconnect.Size = new System.Drawing.Size(95, 23);
+            this.btn_Deconnect.TabIndex = 1;
+            this.btn_Deconnect.Text = "Se deconnecter";
+            this.btn_Deconnect.UseVisualStyleBackColor = true;
+            this.btn_Deconnect.Click += new System.EventHandler(this.btn_Deconnect_Click);
+            // 
+            // lbl_Identifiant
+            // 
+            this.lbl_Identifiant.AutoSize = true;
+            this.lbl_Identifiant.Location = new System.Drawing.Point(63, 16);
+            this.lbl_Identifiant.Name = "lbl_Identifiant";
+            this.lbl_Identifiant.Size = new System.Drawing.Size(53, 13);
+            this.lbl_Identifiant.TabIndex = 0;
+            this.lbl_Identifiant.Text = "Utilisateur";
             // 
             // grp_Connect
             // 
@@ -130,47 +232,6 @@
             this.grp_Connect.TabIndex = 3;
             this.grp_Connect.TabStop = false;
             // 
-            // btn_Connect
-            // 
-            this.btn_Connect.Location = new System.Drawing.Point(6, 84);
-            this.btn_Connect.Name = "btn_Connect";
-            this.btn_Connect.Size = new System.Drawing.Size(95, 23);
-            this.btn_Connect.TabIndex = 4;
-            this.btn_Connect.Text = "Se Connecter";
-            this.btn_Connect.UseVisualStyleBackColor = true;
-            // 
-            // txt_MotDePasse
-            // 
-            this.txt_MotDePasse.Location = new System.Drawing.Point(90, 45);
-            this.txt_MotDePasse.Name = "txt_MotDePasse";
-            this.txt_MotDePasse.Size = new System.Drawing.Size(150, 20);
-            this.txt_MotDePasse.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Identifiant :";
-            // 
-            // txt_Identifiant
-            // 
-            this.txt_Identifiant.Location = new System.Drawing.Point(90, 19);
-            this.txt_Identifiant.Name = "txt_Identifiant";
-            this.txt_Identifiant.Size = new System.Drawing.Size(150, 20);
-            this.txt_Identifiant.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mot de Passe :";
-            // 
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
@@ -181,67 +242,47 @@
             this.lbl_error.TabIndex = 8;
             this.lbl_error.Text = "Identifiant ou Mot de Passe Invalide";
             // 
-            // lbl_Identifiant
+            // label2
             // 
-            this.lbl_Identifiant.AutoSize = true;
-            this.lbl_Identifiant.Location = new System.Drawing.Point(63, 16);
-            this.lbl_Identifiant.Name = "lbl_Identifiant";
-            this.lbl_Identifiant.Size = new System.Drawing.Size(53, 13);
-            this.lbl_Identifiant.TabIndex = 0;
-            this.lbl_Identifiant.Text = "Utilisateur";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Mot de Passe :";
             // 
-            // btn_Deconnect
+            // txt_Identifiant
             // 
-            this.btn_Deconnect.Location = new System.Drawing.Point(6, 40);
-            this.btn_Deconnect.Name = "btn_Deconnect";
-            this.btn_Deconnect.Size = new System.Drawing.Size(95, 23);
-            this.btn_Deconnect.TabIndex = 1;
-            this.btn_Deconnect.Text = "Se deconnecter";
-            this.btn_Deconnect.UseVisualStyleBackColor = true;
+            this.txt_Identifiant.Location = new System.Drawing.Point(90, 19);
+            this.txt_Identifiant.Name = "txt_Identifiant";
+            this.txt_Identifiant.Size = new System.Drawing.Size(150, 20);
+            this.txt_Identifiant.TabIndex = 7;
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Bienvenue,";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Identifiant :";
             // 
-            // lst_Perso
+            // txt_MotDePasse
             // 
-            this.lst_Perso.FormattingEnabled = true;
-            this.lst_Perso.Location = new System.Drawing.Point(6, 19);
-            this.lst_Perso.Name = "lst_Perso";
-            this.lst_Perso.Size = new System.Drawing.Size(238, 355);
-            this.lst_Perso.TabIndex = 0;
+            this.txt_MotDePasse.Location = new System.Drawing.Point(90, 45);
+            this.txt_MotDePasse.Name = "txt_MotDePasse";
+            this.txt_MotDePasse.Size = new System.Drawing.Size(150, 20);
+            this.txt_MotDePasse.TabIndex = 5;
             // 
-            // btn_Perso_Ajouter
+            // btn_Connect
             // 
-            this.btn_Perso_Ajouter.Location = new System.Drawing.Point(8, 381);
-            this.btn_Perso_Ajouter.Name = "btn_Perso_Ajouter";
-            this.btn_Perso_Ajouter.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Ajouter.TabIndex = 1;
-            this.btn_Perso_Ajouter.Text = "Ajouter";
-            this.btn_Perso_Ajouter.UseVisualStyleBackColor = true;
-            // 
-            // btn_Perso_Modifer
-            // 
-            this.btn_Perso_Modifer.Location = new System.Drawing.Point(89, 380);
-            this.btn_Perso_Modifer.Name = "btn_Perso_Modifer";
-            this.btn_Perso_Modifer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Modifer.TabIndex = 2;
-            this.btn_Perso_Modifer.Text = "Modifier";
-            this.btn_Perso_Modifer.UseVisualStyleBackColor = true;
-            // 
-            // btn_Perso_Supprimer
-            // 
-            this.btn_Perso_Supprimer.Location = new System.Drawing.Point(171, 380);
-            this.btn_Perso_Supprimer.Name = "btn_Perso_Supprimer";
-            this.btn_Perso_Supprimer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Supprimer.TabIndex = 3;
-            this.btn_Perso_Supprimer.Text = "Supprimer";
-            this.btn_Perso_Supprimer.UseVisualStyleBackColor = true;
+            this.btn_Connect.Location = new System.Drawing.Point(6, 84);
+            this.btn_Connect.Name = "btn_Connect";
+            this.btn_Connect.Size = new System.Drawing.Size(95, 23);
+            this.btn_Connect.TabIndex = 4;
+            this.btn_Connect.Text = "Se Connecter";
+            this.btn_Connect.UseVisualStyleBackColor = true;
+            this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
             // 
             // grp_Perso_Ajout
             // 
@@ -263,77 +304,24 @@
             this.grp_Perso_Ajout.TabIndex = 4;
             this.grp_Perso_Ajout.TabStop = false;
             // 
-            // txt_Perso_Ajout_Nom
+            // btn_Peso_Ajout_Valider
             // 
-            this.txt_Perso_Ajout_Nom.Location = new System.Drawing.Point(80, 16);
-            this.txt_Perso_Ajout_Nom.Name = "txt_Perso_Ajout_Nom";
-            this.txt_Perso_Ajout_Nom.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Nom.TabIndex = 0;
+            this.btn_Peso_Ajout_Valider.Location = new System.Drawing.Point(28, 150);
+            this.btn_Peso_Ajout_Valider.Name = "btn_Peso_Ajout_Valider";
+            this.btn_Peso_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
+            this.btn_Peso_Ajout_Valider.TabIndex = 11;
+            this.btn_Peso_Ajout_Valider.Text = "Valider";
+            this.btn_Peso_Ajout_Valider.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // btn_Perso8ajout_Annuler
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nom :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Prenom :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Tel :";
-            // 
-            // txt_Perso_Ajout_Prenom
-            // 
-            this.txt_Perso_Ajout_Prenom.Location = new System.Drawing.Point(80, 42);
-            this.txt_Perso_Ajout_Prenom.Name = "txt_Perso_Ajout_Prenom";
-            this.txt_Perso_Ajout_Prenom.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Prenom.TabIndex = 4;
-            // 
-            // txt_Perso_Ajout_Tel
-            // 
-            this.txt_Perso_Ajout_Tel.Location = new System.Drawing.Point(80, 69);
-            this.txt_Perso_Ajout_Tel.Name = "txt_Perso_Ajout_Tel";
-            this.txt_Perso_Ajout_Tel.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Tel.TabIndex = 5;
-            // 
-            // txt_Perso_Ajout_Mail
-            // 
-            this.txt_Perso_Ajout_Mail.Location = new System.Drawing.Point(80, 96);
-            this.txt_Perso_Ajout_Mail.Name = "txt_Perso_Ajout_Mail";
-            this.txt_Perso_Ajout_Mail.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Mail.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Mail :";
-            // 
-            // cmb_Perso_Ajout_Affectation
-            // 
-            this.cmb_Perso_Ajout_Affectation.FormattingEnabled = true;
-            this.cmb_Perso_Ajout_Affectation.Location = new System.Drawing.Point(80, 123);
-            this.cmb_Perso_Ajout_Affectation.Name = "cmb_Perso_Ajout_Affectation";
-            this.cmb_Perso_Ajout_Affectation.Size = new System.Drawing.Size(164, 21);
-            this.cmb_Perso_Ajout_Affectation.TabIndex = 8;
+            this.btn_Perso8ajout_Annuler.Location = new System.Drawing.Point(145, 150);
+            this.btn_Perso8ajout_Annuler.Name = "btn_Perso8ajout_Annuler";
+            this.btn_Perso8ajout_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_Perso8ajout_Annuler.TabIndex = 10;
+            this.btn_Perso8ajout_Annuler.Text = "Annuler";
+            this.btn_Perso8ajout_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Perso8ajout_Annuler.Click += new System.EventHandler(this.btn_Perso8ajout_Annuler_Click);
             // 
             // label9
             // 
@@ -344,58 +332,77 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Affectation :";
             // 
-            // btn_Perso8ajout_Annuler
+            // cmb_Perso_Ajout_Affectation
             // 
-            this.btn_Perso8ajout_Annuler.Location = new System.Drawing.Point(145, 150);
-            this.btn_Perso8ajout_Annuler.Name = "btn_Perso8ajout_Annuler";
-            this.btn_Perso8ajout_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso8ajout_Annuler.TabIndex = 10;
-            this.btn_Perso8ajout_Annuler.Text = "Annuler";
-            this.btn_Perso8ajout_Annuler.UseVisualStyleBackColor = true;
+            this.cmb_Perso_Ajout_Affectation.FormattingEnabled = true;
+            this.cmb_Perso_Ajout_Affectation.Location = new System.Drawing.Point(80, 123);
+            this.cmb_Perso_Ajout_Affectation.Name = "cmb_Perso_Ajout_Affectation";
+            this.cmb_Perso_Ajout_Affectation.Size = new System.Drawing.Size(164, 21);
+            this.cmb_Perso_Ajout_Affectation.TabIndex = 8;
             // 
-            // btn_Peso_Ajout_Valider
+            // label8
             // 
-            this.btn_Peso_Ajout_Valider.Location = new System.Drawing.Point(28, 150);
-            this.btn_Peso_Ajout_Valider.Name = "btn_Peso_Ajout_Valider";
-            this.btn_Peso_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
-            this.btn_Peso_Ajout_Valider.TabIndex = 11;
-            this.btn_Peso_Ajout_Valider.Text = "Valider";
-            this.btn_Peso_Ajout_Valider.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Mail :";
             // 
-            // btn_Abs_Supprimer
+            // txt_Perso_Ajout_Mail
             // 
-            this.btn_Abs_Supprimer.Location = new System.Drawing.Point(189, 377);
-            this.btn_Abs_Supprimer.Name = "btn_Abs_Supprimer";
-            this.btn_Abs_Supprimer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Supprimer.TabIndex = 7;
-            this.btn_Abs_Supprimer.Text = "Supprimer";
-            this.btn_Abs_Supprimer.UseVisualStyleBackColor = true;
+            this.txt_Perso_Ajout_Mail.Location = new System.Drawing.Point(80, 96);
+            this.txt_Perso_Ajout_Mail.Name = "txt_Perso_Ajout_Mail";
+            this.txt_Perso_Ajout_Mail.Size = new System.Drawing.Size(164, 20);
+            this.txt_Perso_Ajout_Mail.TabIndex = 6;
             // 
-            // btn_Abs_Modifier
+            // txt_Perso_Ajout_Tel
             // 
-            this.btn_Abs_Modifier.Location = new System.Drawing.Point(107, 377);
-            this.btn_Abs_Modifier.Name = "btn_Abs_Modifier";
-            this.btn_Abs_Modifier.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Modifier.TabIndex = 6;
-            this.btn_Abs_Modifier.Text = "Modifier";
-            this.btn_Abs_Modifier.UseVisualStyleBackColor = true;
+            this.txt_Perso_Ajout_Tel.Location = new System.Drawing.Point(80, 69);
+            this.txt_Perso_Ajout_Tel.Name = "txt_Perso_Ajout_Tel";
+            this.txt_Perso_Ajout_Tel.Size = new System.Drawing.Size(164, 20);
+            this.txt_Perso_Ajout_Tel.TabIndex = 5;
             // 
-            // btn_Abs_Ajouter
+            // txt_Perso_Ajout_Prenom
             // 
-            this.btn_Abs_Ajouter.Location = new System.Drawing.Point(26, 378);
-            this.btn_Abs_Ajouter.Name = "btn_Abs_Ajouter";
-            this.btn_Abs_Ajouter.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajouter.TabIndex = 5;
-            this.btn_Abs_Ajouter.Text = "Ajouter";
-            this.btn_Abs_Ajouter.UseVisualStyleBackColor = true;
+            this.txt_Perso_Ajout_Prenom.Location = new System.Drawing.Point(80, 42);
+            this.txt_Perso_Ajout_Prenom.Name = "txt_Perso_Ajout_Prenom";
+            this.txt_Perso_Ajout_Prenom.Size = new System.Drawing.Size(164, 20);
+            this.txt_Perso_Ajout_Prenom.TabIndex = 4;
             // 
-            // lst_Abs
+            // label7
             // 
-            this.lst_Abs.FormattingEnabled = true;
-            this.lst_Abs.Location = new System.Drawing.Point(6, 16);
-            this.lst_Abs.Name = "lst_Abs";
-            this.lst_Abs.Size = new System.Drawing.Size(281, 355);
-            this.lst_Abs.TabIndex = 4;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(28, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Tel :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Prenom :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nom :";
+            // 
+            // txt_Perso_Ajout_Nom
+            // 
+            this.txt_Perso_Ajout_Nom.Location = new System.Drawing.Point(80, 16);
+            this.txt_Perso_Ajout_Nom.Name = "txt_Perso_Ajout_Nom";
+            this.txt_Perso_Ajout_Nom.Size = new System.Drawing.Size(164, 20);
+            this.txt_Perso_Ajout_Nom.TabIndex = 0;
             // 
             // grp_Abs_Ajout
             // 
@@ -413,14 +420,58 @@
             this.grp_Abs_Ajout.TabIndex = 5;
             this.grp_Abs_Ajout.TabStop = false;
             // 
-            // label10
+            // btn_Abs_Ajout_Valider
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Date de début :";
+            this.btn_Abs_Ajout_Valider.Location = new System.Drawing.Point(50, 96);
+            this.btn_Abs_Ajout_Valider.Name = "btn_Abs_Ajout_Valider";
+            this.btn_Abs_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abs_Ajout_Valider.TabIndex = 13;
+            this.btn_Abs_Ajout_Valider.Text = "Valider";
+            this.btn_Abs_Ajout_Valider.UseVisualStyleBackColor = true;
+            // 
+            // cmb_Abs_Ajout_Motif
+            // 
+            this.cmb_Abs_Ajout_Motif.FormattingEnabled = true;
+            this.cmb_Abs_Ajout_Motif.Location = new System.Drawing.Point(93, 68);
+            this.cmb_Abs_Ajout_Motif.Name = "cmb_Abs_Ajout_Motif";
+            this.cmb_Abs_Ajout_Motif.Size = new System.Drawing.Size(194, 21);
+            this.cmb_Abs_Ajout_Motif.TabIndex = 6;
+            // 
+            // btn_Abs_Ajout_Annuler
+            // 
+            this.btn_Abs_Ajout_Annuler.Location = new System.Drawing.Point(189, 96);
+            this.btn_Abs_Ajout_Annuler.Name = "btn_Abs_Ajout_Annuler";
+            this.btn_Abs_Ajout_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abs_Ajout_Annuler.TabIndex = 12;
+            this.btn_Abs_Ajout_Annuler.Text = "Annuler";
+            this.btn_Abs_Ajout_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Abs_Ajout_Annuler.Click += new System.EventHandler(this.btn_Abs_Ajout_Annuler_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(47, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Motif :";
+            // 
+            // dtp_Abs_Fin
+            // 
+            this.dtp_Abs_Fin.Location = new System.Drawing.Point(93, 42);
+            this.dtp_Abs_Fin.Name = "dtp_Abs_Fin";
+            this.dtp_Abs_Fin.Size = new System.Drawing.Size(194, 20);
+            this.dtp_Abs_Fin.TabIndex = 4;
+            this.dtp_Abs_Fin.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Date de fin :";
             // 
             // dtp_Abs_Debut
             // 
@@ -432,57 +483,14 @@
             this.dtp_Abs_Debut.TabStop = false;
             this.dtp_Abs_Debut.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
             // 
-            // label11
+            // label10
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 45);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Date de fin :";
-            // 
-            // dtp_Abs_Fin
-            // 
-            this.dtp_Abs_Fin.Location = new System.Drawing.Point(93, 42);
-            this.dtp_Abs_Fin.Name = "dtp_Abs_Fin";
-            this.dtp_Abs_Fin.Size = new System.Drawing.Size(194, 20);
-            this.dtp_Abs_Fin.TabIndex = 4;
-            this.dtp_Abs_Fin.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(47, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Motif :";
-            // 
-            // cmb_Abs_Ajout_Motif
-            // 
-            this.cmb_Abs_Ajout_Motif.FormattingEnabled = true;
-            this.cmb_Abs_Ajout_Motif.Location = new System.Drawing.Point(93, 68);
-            this.cmb_Abs_Ajout_Motif.Name = "cmb_Abs_Ajout_Motif";
-            this.cmb_Abs_Ajout_Motif.Size = new System.Drawing.Size(194, 21);
-            this.cmb_Abs_Ajout_Motif.TabIndex = 6;
-            // 
-            // btn_Abs_Ajout_Valider
-            // 
-            this.btn_Abs_Ajout_Valider.Location = new System.Drawing.Point(50, 96);
-            this.btn_Abs_Ajout_Valider.Name = "btn_Abs_Ajout_Valider";
-            this.btn_Abs_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajout_Valider.TabIndex = 13;
-            this.btn_Abs_Ajout_Valider.Text = "Valider";
-            this.btn_Abs_Ajout_Valider.UseVisualStyleBackColor = true;
-            // 
-            // btn_Abs_Ajout_Annuler
-            // 
-            this.btn_Abs_Ajout_Annuler.Location = new System.Drawing.Point(189, 96);
-            this.btn_Abs_Ajout_Annuler.Name = "btn_Abs_Ajout_Annuler";
-            this.btn_Abs_Ajout_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajout_Annuler.TabIndex = 12;
-            this.btn_Abs_Ajout_Annuler.Text = "Annuler";
-            this.btn_Abs_Ajout_Annuler.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Date de début :";
             // 
             // Form1
             // 

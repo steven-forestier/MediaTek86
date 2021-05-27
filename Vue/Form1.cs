@@ -77,7 +77,7 @@ namespace MediaTek86
             grp_Perso_Ajout.Visible = false;
         }
 
-        public void OpenPannel_Ajout_Abs(string action)
+        public void OpenPanel_Ajout_Abs(string action)
         {
             grp_Abs_Ajout.Enabled = true;
             grp_Abs_Ajout.Visible = true;
@@ -88,6 +88,46 @@ namespace MediaTek86
         {
             grp_Abs_Ajout.Enabled = false;
             grp_Abs_Ajout.Visible = false;
+        }
+
+        private void btn_Connect_Click(object sender, EventArgs e)
+        {
+            StatusConnecter("moi");
+        }
+
+        private void btn_Deconnect_Click(object sender, EventArgs e)
+        {
+            StatusDepart();
+        }
+
+        private void btn_Perso_Ajouter_Click(object sender, EventArgs e)
+        {
+            OpenPanel_Ajout_Perso("Ajouter Personnel");
+        }
+
+        private void btn_Perso_Modifer_Click(object sender, EventArgs e)
+        {
+            OpenPanel_Ajout_Perso("Modifier Personnel");
+        }
+
+        private void btn_Abs_Ajouter_Click(object sender, EventArgs e)
+        {
+            OpenPanel_Ajout_Abs("Ajouter une Absence");
+        }
+
+        private void btn_Abs_Modifier_Click(object sender, EventArgs e)
+        {
+            OpenPanel_Ajout_Abs("Modifier une Absence");
+        }
+
+        private void btn_Perso8ajout_Annuler_Click(object sender, EventArgs e)
+        {
+            ClosePannel_Ajout_Perso();
+        }
+
+        private void btn_Abs_Ajout_Annuler_Click(object sender, EventArgs e)
+        {
+            ClosePannel_Ajout_Abs();
         }
     }
 }
