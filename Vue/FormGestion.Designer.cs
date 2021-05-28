@@ -1,4 +1,4 @@
-﻿namespace MediaTek86
+﻿namespace MediaTek86.Vue
 {
     partial class Form1
     {
