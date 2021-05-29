@@ -80,21 +80,23 @@ namespace MediaTek86.dal
         /// Récupère la liste des absences de la bdd et la retourne
         /// </summary>
         /// <returns>liste des absences</returns>
-        public static List<Absence> GetLesAbsences()
+        public static List<Absence> GetLesAbsences(int id)
         {
-            List<Absence> lePersonnel = new List<Absence>();
+            List<Absence> lesAbsences = new List<Absence>();
             string req = "select p.idpersonnel as idpersonnel, m.idmotif as idmotif, a.datedebut as datedebut, a.datefin as datefin";
-            req += "from absence as a join personnel p on (p.idpersonnel = a.idpersonnel)";
+            req += "from absence where idpersonnel = @idpersonnel";
             req += "order by datedebut";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", id);
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
-            curseur.ReqSelect(req);
+            curseur.ReqSelect(req, parameters);
             while (curseur.Read())
             {
-                Absence absence = new Absence((int)curseur.Field("idpersonnel"), (int)curseur.Field("idmotif"), (string)curseur.Field("datedebut"), (string)curseur.Field("datefin"));
-                lePersonnel.Add(absence);
+                Absence absence = new Absence((int)curseur.Field("idpersonnel"), (int)curseur.Field("idmotif"), (DateTime)curseur.Field("datedebut"), (DateTime)curseur.Field("datefin"));
+                lesAbsences.Add(absence);
             }
             curseur.Close();
-            return lePersonnel;
+            return lesAbsences;
         }
 
         /// <summary>
@@ -116,6 +118,26 @@ namespace MediaTek86.dal
             return responsables;
         }
         #endregion
+
+        public static Boolean ControleAuthentification(string identifiant,string mdp)
+        {
+            string req = "select * from responsable r where login = @login and pwd =SHA2(@pwd, 256)";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@login", identifiant);
+            parameters.Add("@pwd", mdp);
+            ConnectionBDD curs = ConnectionBDD.GetInstance(chaineConnexion);
+            curs.ReqSelect(req, parameters);
+            if (curs.Read())
+            {
+                curs.Close();
+                return true;
+            }
+            else
+            {
+                curs.Close();
+                return false;
+            }
+        }
 
         #region Controle Personnel
         /// <summary>
@@ -218,6 +240,19 @@ namespace MediaTek86.dal
             parameters.Add("@datedebut", absence.DateDebut);
             parameters.Add("@idmotif", absence.IdMotif);
             parameters.Add("@datefin", absence.DateFin);
+            ConnectionBDD conn = ConnectionBDD.GetInstance(chaineConnexion);
+            conn.ReqUpdate(req, parameters);
+        }
+
+        /// <summary>
+        /// Permet la suppresssion de toutes les absences d'un membre du personnel
+        /// </summary>
+        /// <param name="id"></param>
+        public static void SuppreAbsencePersonnel(int id)
+        {
+            string req = "delete from absence where idpersonnel = @idpersonnel;";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", id);
             ConnectionBDD conn = ConnectionBDD.GetInstance(chaineConnexion);
             conn.ReqUpdate(req, parameters);
         }

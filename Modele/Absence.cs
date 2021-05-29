@@ -10,14 +10,14 @@ namespace MediaTek86.Modele
     {
         private int idPersonnel;
         private int idMotif;
-        private string dateDebut;
-        private string dateFin;
+        private DateTime dateDebut;
+        private DateTime dateFin;
 
         #region Getteur
         public int IdPersonnel { get => idPersonnel; }
         public int IdMotif { get => idMotif; }
-        public string DateDebut { get => dateDebut; }
-        public string DateFin { get => dateFin; }
+        public DateTime DateDebut { get => dateDebut; }
+        public DateTime DateFin { get => dateFin; }
         #endregion
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace MediaTek86.Modele
         /// <param name="idMotif"></param>
         /// <param name="dateDebut"></param>
         /// <param name="dateFin"></param>
-        public Absence(int idPersonnel, int idMotif, string dateDebut, string dateFin)
+        public Absence(int idPersonnel, int idMotif, DateTime dateDebut, DateTime dateFin)
         {
             this.idPersonnel = idPersonnel;
             this.idMotif = idMotif;

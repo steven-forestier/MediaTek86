@@ -9,12 +9,18 @@ namespace MediaTek86.Controleur
 {
     class Controle
     {
+        private FormGestion formGestion;
+
         public Controle()
         {
-            (new FormGestion(this)).ShowDialog();
+            formGestion = new FormGestion(this);
+            formGestion.ShowDialog();
         }
 
+        
+
         #region Getteur Données BDD
+
         /// <summary>
         /// Récupère la liste du Personnel de la BDD et la retourne
         /// </summary>
@@ -28,9 +34,9 @@ namespace MediaTek86.Controleur
         /// Récupère la liste des absences de la bdd et la retourne
         /// </summary>
         /// <returns>liste des absences</returns>
-        public List<Absence> GetAbsences()
+        public List<Absence> GetAbsences(int id)
         {
-            return AccesDonneesBDD.GetLesAbsences();
+            return AccesDonneesBDD.GetLesAbsences(id);
         }
 
         /// <summary>
@@ -61,6 +67,20 @@ namespace MediaTek86.Controleur
         }
 
         #endregion
+
+        public Boolean ControleIdentite(string identifiant, string mdp)
+        {
+            if(AccesDonneesBDD.ControleAuthentification(identifiant, mdp))
+            {
+                formGestion.StatusConnecter(identifiant);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         #region Add/Mod/Suppr Personnel
 
         /// <summary>
@@ -89,8 +109,10 @@ namespace MediaTek86.Controleur
         {
             AccesDonneesBDD.SupprPersonnel(personnel);
         }
+
         #endregion
         #region Add/Mod/Suppr Absence
+
         /// <summary>
         /// Permet l'ajout d'une absence
         /// </summary>
@@ -117,6 +139,16 @@ namespace MediaTek86.Controleur
         {
             AccesDonneesBDD.SupprAbsence(absence);
         }
+
+        /// <summary>
+        /// Permet la suppresssion de toutes les absences d'un membre du personnel
+        /// </summary>
+        /// <param name="id"></param>
+        public void SupprAbsencePersonnel(int id)
+        {
+            AccesDonneesBDD.SuppreAbsencePersonnel(id);
+        }
+
         #endregion
 
     }

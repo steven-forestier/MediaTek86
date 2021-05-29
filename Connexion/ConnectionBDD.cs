@@ -86,7 +86,7 @@ namespace MediaTek86.Connexion
         }
 
         /// <summary>
-        /// 
+        /// Execute une requête SELECT
         /// </summary>
         /// <param name="chaineDemande"></param>
         public void ReqSelect(string chaineDemande)
@@ -94,6 +94,29 @@ namespace MediaTek86.Connexion
             try
             {
                 cmd = new MySqlCommand(chaineDemande, connection);
+                reader = cmd.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Execute une requête SELECT avec un parametre de recherche spécifique
+        /// </summary>
+        /// <param name="chaineDemande"></param>
+        /// <param name="parameters"></param>
+        public void ReqSelect(string chaineDemande, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                cmd = new MySqlCommand(chaineDemande, connection);
+                foreach(KeyValuePair<string,object> parametre in parameters)
+                {
+                    cmd.Parameters.Add(new MySqlParameter(parametre.Key, parametre.Value));
+                }
+                cmd.Prepare();
                 reader = cmd.ExecuteReader();
             }
             catch (Exception e)

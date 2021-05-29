@@ -51,7 +51,7 @@
             this.btn_Connect = new System.Windows.Forms.Button();
             this.grp_Perso_Ajout = new System.Windows.Forms.GroupBox();
             this.btn_Peso_Ajout_Valider = new System.Windows.Forms.Button();
-            this.btn_Perso8ajout_Annuler = new System.Windows.Forms.Button();
+            this.btn_Perso_ajout_Annuler = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_Perso_Ajout_Affectation = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -100,6 +100,7 @@
             this.btn_Perso_Supprimer.TabIndex = 3;
             this.btn_Perso_Supprimer.Text = "Supprimer";
             this.btn_Perso_Supprimer.UseVisualStyleBackColor = true;
+            this.btn_Perso_Supprimer.Click += new System.EventHandler(this.btn_Perso_Supprimer_Click);
             // 
             // btn_Perso_Modifer
             // 
@@ -128,6 +129,7 @@
             this.lst_Perso.Name = "lst_Perso";
             this.lst_Perso.Size = new System.Drawing.Size(238, 355);
             this.lst_Perso.TabIndex = 0;
+            this.lst_Perso.SelectedIndexChanged += new System.EventHandler(this.lst_Perso_SelectedIndexChanged);
             // 
             // grp_Abs
             // 
@@ -150,6 +152,7 @@
             this.btn_Abs_Supprimer.TabIndex = 7;
             this.btn_Abs_Supprimer.Text = "Supprimer";
             this.btn_Abs_Supprimer.UseVisualStyleBackColor = true;
+            this.btn_Abs_Supprimer.Click += new System.EventHandler(this.btn_Abs_Supprimer_Click);
             // 
             // lst_Abs
             // 
@@ -287,7 +290,7 @@
             // grp_Perso_Ajout
             // 
             this.grp_Perso_Ajout.Controls.Add(this.btn_Peso_Ajout_Valider);
-            this.grp_Perso_Ajout.Controls.Add(this.btn_Perso8ajout_Annuler);
+            this.grp_Perso_Ajout.Controls.Add(this.btn_Perso_ajout_Annuler);
             this.grp_Perso_Ajout.Controls.Add(this.label9);
             this.grp_Perso_Ajout.Controls.Add(this.cmb_Perso_Ajout_Affectation);
             this.grp_Perso_Ajout.Controls.Add(this.label8);
@@ -312,16 +315,17 @@
             this.btn_Peso_Ajout_Valider.TabIndex = 11;
             this.btn_Peso_Ajout_Valider.Text = "Valider";
             this.btn_Peso_Ajout_Valider.UseVisualStyleBackColor = true;
+            this.btn_Peso_Ajout_Valider.Click += new System.EventHandler(this.btn_Peso_Ajout_Valider_Click);
             // 
-            // btn_Perso8ajout_Annuler
+            // btn_Perso_ajout_Annuler
             // 
-            this.btn_Perso8ajout_Annuler.Location = new System.Drawing.Point(145, 150);
-            this.btn_Perso8ajout_Annuler.Name = "btn_Perso8ajout_Annuler";
-            this.btn_Perso8ajout_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso8ajout_Annuler.TabIndex = 10;
-            this.btn_Perso8ajout_Annuler.Text = "Annuler";
-            this.btn_Perso8ajout_Annuler.UseVisualStyleBackColor = true;
-            this.btn_Perso8ajout_Annuler.Click += new System.EventHandler(this.btn_Perso8ajout_Annuler_Click);
+            this.btn_Perso_ajout_Annuler.Location = new System.Drawing.Point(145, 150);
+            this.btn_Perso_ajout_Annuler.Name = "btn_Perso_ajout_Annuler";
+            this.btn_Perso_ajout_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_Perso_ajout_Annuler.TabIndex = 10;
+            this.btn_Perso_ajout_Annuler.Text = "Annuler";
+            this.btn_Perso_ajout_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Perso_ajout_Annuler.Click += new System.EventHandler(this.btn_Perso_ajout_Annuler_Click);
             // 
             // label9
             // 
@@ -428,6 +432,7 @@
             this.btn_Abs_Ajout_Valider.TabIndex = 13;
             this.btn_Abs_Ajout_Valider.Text = "Valider";
             this.btn_Abs_Ajout_Valider.UseVisualStyleBackColor = true;
+            this.btn_Abs_Ajout_Valider.Click += new System.EventHandler(this.btn_Abs_Ajout_Valider_Click);
             // 
             // cmb_Abs_Ajout_Motif
             // 
@@ -539,7 +544,7 @@
         private System.Windows.Forms.Button btn_Perso_Ajouter;
         private System.Windows.Forms.ListBox lst_Perso;
         private System.Windows.Forms.GroupBox grp_Perso_Ajout;
-        private System.Windows.Forms.Button btn_Perso8ajout_Annuler;
+        private System.Windows.Forms.Button btn_Perso_ajout_Annuler;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmb_Perso_Ajout_Affectation;
         private System.Windows.Forms.Label label8;
