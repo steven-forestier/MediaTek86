@@ -13,10 +13,12 @@ namespace MediaTek86.Modele
         private string dateDebut;
         private string dateFin;
 
+        #region Getteur
         public int IdPersonnel { get => idPersonnel; }
         public int IdMotif { get => idMotif; }
         public string DateDebut { get => dateDebut; }
         public string DateFin { get => dateFin; }
+        #endregion
 
         /// <summary>
         /// Constructeur

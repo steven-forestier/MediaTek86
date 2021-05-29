@@ -7,11 +7,26 @@ namespace MediaTek86.Connexion
 {
     public class ConnectionBDD
     {
+        #region Singleton
         /// <summary>
         /// Unique instance de la classe
         /// </summary>
         private static ConnectionBDD instance = null;
 
+        /// <summary>
+        /// Creer une instance unique de la classe si elle n'existe pas déjà
+        /// </summary>
+        /// <returns></returns>
+        public static ConnectionBDD GetInstance(string chaineConnection)
+        {
+            if (ConnectionBDD.instance == null)
+            {
+                instance = new ConnectionBDD(chaineConnection);
+            }
+            return instance;
+        }
+        #endregion
+        
         /// <summary>
         /// objet permettant la connection à la base de donnée à partir d'une chaîne de connection
         /// </summary>
@@ -45,27 +60,14 @@ namespace MediaTek86.Connexion
                 Application.Exit();
             }
         }
-        
 
-        /// <summary>
-        /// Creer une instance unique de la classe si elle n'existe pas déjà
-        /// </summary>
-        /// <returns></returns>
-        public static ConnectionBDD getInstance(string chaineConnection)
-        {
-            if(ConnectionBDD.instance == null)
-            {
-                instance = new ConnectionBDD(chaineConnection);
-            }
-            return instance;
-        }
-
+        #region Curseur et Requêtes
         /// <summary>
         /// Exécute une demande d'un type autre que SELECT
         /// </summary>
         /// <param name="chaineDemande"></param>
         /// <param name="parametres"></param>
-        public void AskUpdate(string chaineDemande, Dictionary<string, object> parametres)
+        public void ReqUpdate(string chaineDemande, Dictionary<string, object> parametres)
         {
             try
             {
@@ -87,7 +89,7 @@ namespace MediaTek86.Connexion
         /// 
         /// </summary>
         /// <param name="chaineDemande"></param>
-        public void AskSelect(string chaineDemande)
+        public void ReqSelect(string chaineDemande)
         {
             try
             {
@@ -149,5 +151,6 @@ namespace MediaTek86.Connexion
                 reader.Close();
             }
         }
+        #endregion
     }
 }

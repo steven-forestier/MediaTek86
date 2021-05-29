@@ -11,8 +11,10 @@ namespace MediaTek86.Modele
         private int idService;
         private string nom;
 
+        #region Getteur
         public int IdService { get => idService; }
         public string Nom { get => nom; }
+        #endregion
 
         /// <summary>
         /// Constructeur

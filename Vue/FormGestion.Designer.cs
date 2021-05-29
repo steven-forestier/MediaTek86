@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.Vue
 {
-    partial class Form1
+    partial class FormGestion
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -492,7 +492,7 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Date de début :";
             // 
-            // Form1
+            // FormGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -503,9 +503,8 @@
             this.Controls.Add(this.grp_Deconnect);
             this.Controls.Add(this.grp_Abs);
             this.Controls.Add(this.grp_Perso);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "FormGestion";
+            this.Text = "Gestion Du Personnel MediaTek86";
             this.grp_Perso.ResumeLayout(false);
             this.grp_Abs.ResumeLayout(false);
             this.grp_Deconnect.ResumeLayout(false);

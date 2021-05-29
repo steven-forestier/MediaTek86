@@ -15,12 +15,14 @@ namespace MediaTek86.Modele
         private string tel;
         private string mail;
 
+        #region Getteur
         public int IdPersonnel { get => idPersonnel; }
         public int IdService { get => idService; }
         public string Nom { get => nom; }
         public string Prenom { get => prenom; }
         public string Tel { get => tel; }
         public string Mail { get => mail; }
+        #endregion
 
         /// <summary>
         /// Constructeur

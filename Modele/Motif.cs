@@ -11,8 +11,10 @@ namespace MediaTek86.Modele
         private int idMotif;
         private string libelle;
 
+        #region Getteur
         public int IdMotif { get => idMotif; }
         public string Libelle { get => libelle; }
+        #endregion
 
         /// <summary>
         /// Constructeur

@@ -1,24 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MediaTek86.Controleur;
+using MediaTek86.Modele;
 
 namespace MediaTek86.Vue
 {
-    public partial class Form1 : Form
+    public partial class FormGestion : Form
     {
-        public Form1()
+        /// <summary>
+        /// instance du controlleur
+        /// </summary>
+        private Controle controle;
+
+        /// <summary>
+        /// Booléen pour savoir si une modification est en cours
+        /// </summary>
+        private Boolean modifEnCours = false;
+
+        /// <summary>
+        /// Objet gérant la liste du personnel
+        /// </summary>
+        BindingSource bdgPersonnel = new BindingSource();
+
+        /// <summary>
+        /// Objet gérant la liste des absences
+        /// </summary>
+        BindingSource bdgAbsence = new BindingSource();
+
+        /// <summary>
+        /// Objet gérant la liste des motifs
+        /// </summary>
+        BindingSource bdgMotif = new BindingSource();
+
+        /// <summary>
+        /// Objet gérant la liste des affectations/services
+        /// </summary>
+        BindingSource bdgAffectation = new BindingSource();
+
+        /// <summary>
+        /// Initialise les graphismes
+        /// Récupère le controleur
+        /// </summary>
+        /// <param name="controle"></param>
+        public FormGestion(Controle controle)
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            this.controle = controle;
             StatusDepart();
         }
 
@@ -44,6 +72,8 @@ namespace MediaTek86.Vue
             grp_Connect.Visible = true;
             // le message d'erreur est mis à zéro
             lbl_error.Text = "";
+            // remplis la list du personnel
+            Remplir_lst_Perso();
         }
 
         public void StatusConnecter(string nom)
@@ -64,6 +94,43 @@ namespace MediaTek86.Vue
             lbl_Identifiant.Text = nom;
         }
 
+        public void Remplir_lst_Perso()
+        {
+            List<Personnel> personnels = controle.GetPersonnels();
+            bdgPersonnel.DataSource = personnels;
+            lst_Perso.DataSource = bdgPersonnel;
+        }
+
+        public void Remplir_lst_Absence()
+        {
+            List<Absence> absences = controle.GetAbsences();
+            bdgAbsence.DataSource = absences;
+            lst_Abs.DataSource = bdgAbsence;
+        }
+
+        public void Remplir_cmb_Motif()
+        {
+            List<Motif> motif = controle.GetMotifs();
+            bdgAbsence.DataSource = motif;
+            cmb_Abs_Ajout_Motif.DataSource = bdgAbsence;
+            if(cmb_Abs_Ajout_Motif.Items.Count > 0)
+            {
+                cmb_Abs_Ajout_Motif.SelectedIndex = 0;
+            }
+        }
+
+        public void Remplir_cmb_Affectation()
+        {
+            List<Service> services = controle.GetServices();
+            bdgAffectation.DataSource = services;
+            cmb_Perso_Ajout_Affectation.DataSource = bdgAffectation;
+            if(cmb_Perso_Ajout_Affectation.Items.Count > 0)
+            {
+                cmb_Perso_Ajout_Affectation.SelectedIndex = 0;
+            }
+        }
+
+        #region Paneaux d'ajout/modification/suppression de Personnel
         public void OpenPanel_Ajout_Perso(string action)
         {
             grp_Perso_Ajout.Enabled = true;
@@ -76,7 +143,9 @@ namespace MediaTek86.Vue
             grp_Perso_Ajout.Enabled = false;
             grp_Perso_Ajout.Visible = false;
         }
+        #endregion
 
+        #region Panneaux d'ajout/modification/suppression d'Absence
         public void OpenPanel_Ajout_Abs(string action)
         {
             grp_Abs_Ajout.Enabled = true;
@@ -89,7 +158,9 @@ namespace MediaTek86.Vue
             grp_Abs_Ajout.Enabled = false;
             grp_Abs_Ajout.Visible = false;
         }
+        #endregion
 
+        #region Test Onclick event
         private void btn_Connect_Click(object sender, EventArgs e)
         {
             StatusConnecter("moi");
@@ -129,5 +200,6 @@ namespace MediaTek86.Vue
         {
             ClosePannel_Ajout_Abs();
         }
+        #endregion
     }
 }

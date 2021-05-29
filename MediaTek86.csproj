@@ -56,7 +56,8 @@
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dal\AccesDonnees.cs" />
+    <Compile Include="Controleur\Controle.cs" />
+    <Compile Include="dal\AccesDonneesBDD.cs" />
     <Compile Include="Modele\Responsable.cs" />
     <Compile Include="Modele\Service.cs" />
     <Compile Include="Modele\Personnel.cs" />
@@ -112,8 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controleur\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

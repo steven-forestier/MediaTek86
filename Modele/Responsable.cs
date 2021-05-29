@@ -11,9 +11,10 @@ namespace MediaTek86.Modele
         private string login;
         private string pwd;
 
+        #region Getteur
         public string Login { get => login; }
         public string Pwd { get => pwd; set => pwd = value; }
-
+        #endregion
 
         /// <summary>
         /// Constructeur
