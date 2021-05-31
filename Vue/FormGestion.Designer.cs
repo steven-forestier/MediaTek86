@@ -97,7 +97,7 @@
             this.btn_Perso_Supprimer.Location = new System.Drawing.Point(171, 380);
             this.btn_Perso_Supprimer.Name = "btn_Perso_Supprimer";
             this.btn_Perso_Supprimer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Supprimer.TabIndex = 3;
+            this.btn_Perso_Supprimer.TabIndex = 7;
             this.btn_Perso_Supprimer.Text = "Supprimer";
             this.btn_Perso_Supprimer.UseVisualStyleBackColor = true;
             this.btn_Perso_Supprimer.Click += new System.EventHandler(this.btn_Perso_Supprimer_Click);
@@ -107,7 +107,7 @@
             this.btn_Perso_Modifer.Location = new System.Drawing.Point(89, 380);
             this.btn_Perso_Modifer.Name = "btn_Perso_Modifer";
             this.btn_Perso_Modifer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Modifer.TabIndex = 2;
+            this.btn_Perso_Modifer.TabIndex = 6;
             this.btn_Perso_Modifer.Text = "Modifier";
             this.btn_Perso_Modifer.UseVisualStyleBackColor = true;
             this.btn_Perso_Modifer.Click += new System.EventHandler(this.btn_Perso_Modifer_Click);
@@ -117,7 +117,7 @@
             this.btn_Perso_Ajouter.Location = new System.Drawing.Point(8, 381);
             this.btn_Perso_Ajouter.Name = "btn_Perso_Ajouter";
             this.btn_Perso_Ajouter.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_Ajouter.TabIndex = 1;
+            this.btn_Perso_Ajouter.TabIndex = 5;
             this.btn_Perso_Ajouter.Text = "Ajouter";
             this.btn_Perso_Ajouter.UseVisualStyleBackColor = true;
             this.btn_Perso_Ajouter.Click += new System.EventHandler(this.btn_Perso_Ajouter_Click);
@@ -149,7 +149,7 @@
             this.btn_Abs_Supprimer.Location = new System.Drawing.Point(189, 377);
             this.btn_Abs_Supprimer.Name = "btn_Abs_Supprimer";
             this.btn_Abs_Supprimer.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Supprimer.TabIndex = 7;
+            this.btn_Abs_Supprimer.TabIndex = 17;
             this.btn_Abs_Supprimer.Text = "Supprimer";
             this.btn_Abs_Supprimer.UseVisualStyleBackColor = true;
             this.btn_Abs_Supprimer.Click += new System.EventHandler(this.btn_Abs_Supprimer_Click);
@@ -167,7 +167,7 @@
             this.btn_Abs_Modifier.Location = new System.Drawing.Point(107, 377);
             this.btn_Abs_Modifier.Name = "btn_Abs_Modifier";
             this.btn_Abs_Modifier.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Modifier.TabIndex = 6;
+            this.btn_Abs_Modifier.TabIndex = 16;
             this.btn_Abs_Modifier.Text = "Modifier";
             this.btn_Abs_Modifier.UseVisualStyleBackColor = true;
             this.btn_Abs_Modifier.Click += new System.EventHandler(this.btn_Abs_Modifier_Click);
@@ -177,7 +177,7 @@
             this.btn_Abs_Ajouter.Location = new System.Drawing.Point(26, 378);
             this.btn_Abs_Ajouter.Name = "btn_Abs_Ajouter";
             this.btn_Abs_Ajouter.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajouter.TabIndex = 5;
+            this.btn_Abs_Ajouter.TabIndex = 15;
             this.btn_Abs_Ajouter.Text = "Ajouter";
             this.btn_Abs_Ajouter.UseVisualStyleBackColor = true;
             this.btn_Abs_Ajouter.Click += new System.EventHandler(this.btn_Abs_Ajouter_Click);
@@ -207,7 +207,7 @@
             this.btn_Deconnect.Location = new System.Drawing.Point(6, 40);
             this.btn_Deconnect.Name = "btn_Deconnect";
             this.btn_Deconnect.Size = new System.Drawing.Size(95, 23);
-            this.btn_Deconnect.TabIndex = 1;
+            this.btn_Deconnect.TabIndex = 4;
             this.btn_Deconnect.Text = "Se deconnecter";
             this.btn_Deconnect.UseVisualStyleBackColor = true;
             this.btn_Deconnect.Click += new System.EventHandler(this.btn_Deconnect_Click);
@@ -259,7 +259,7 @@
             this.txt_Identifiant.Location = new System.Drawing.Point(90, 19);
             this.txt_Identifiant.Name = "txt_Identifiant";
             this.txt_Identifiant.Size = new System.Drawing.Size(150, 20);
-            this.txt_Identifiant.TabIndex = 7;
+            this.txt_Identifiant.TabIndex = 1;
             // 
             // label1
             // 
@@ -275,14 +275,14 @@
             this.txt_MotDePasse.Location = new System.Drawing.Point(90, 45);
             this.txt_MotDePasse.Name = "txt_MotDePasse";
             this.txt_MotDePasse.Size = new System.Drawing.Size(150, 20);
-            this.txt_MotDePasse.TabIndex = 5;
+            this.txt_MotDePasse.TabIndex = 2;
             // 
             // btn_Connect
             // 
             this.btn_Connect.Location = new System.Drawing.Point(6, 84);
             this.btn_Connect.Name = "btn_Connect";
             this.btn_Connect.Size = new System.Drawing.Size(95, 23);
-            this.btn_Connect.TabIndex = 4;
+            this.btn_Connect.TabIndex = 3;
             this.btn_Connect.Text = "Se Connecter";
             this.btn_Connect.UseVisualStyleBackColor = true;
             this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
@@ -312,7 +312,7 @@
             this.btn_Peso_Ajout_Valider.Location = new System.Drawing.Point(28, 150);
             this.btn_Peso_Ajout_Valider.Name = "btn_Peso_Ajout_Valider";
             this.btn_Peso_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
-            this.btn_Peso_Ajout_Valider.TabIndex = 11;
+            this.btn_Peso_Ajout_Valider.TabIndex = 13;
             this.btn_Peso_Ajout_Valider.Text = "Valider";
             this.btn_Peso_Ajout_Valider.UseVisualStyleBackColor = true;
             this.btn_Peso_Ajout_Valider.Click += new System.EventHandler(this.btn_Peso_Ajout_Valider_Click);
@@ -322,7 +322,7 @@
             this.btn_Perso_ajout_Annuler.Location = new System.Drawing.Point(145, 150);
             this.btn_Perso_ajout_Annuler.Name = "btn_Perso_ajout_Annuler";
             this.btn_Perso_ajout_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Perso_ajout_Annuler.TabIndex = 10;
+            this.btn_Perso_ajout_Annuler.TabIndex = 14;
             this.btn_Perso_ajout_Annuler.Text = "Annuler";
             this.btn_Perso_ajout_Annuler.UseVisualStyleBackColor = true;
             this.btn_Perso_ajout_Annuler.Click += new System.EventHandler(this.btn_Perso_ajout_Annuler_Click);
@@ -342,7 +342,7 @@
             this.cmb_Perso_Ajout_Affectation.Location = new System.Drawing.Point(80, 123);
             this.cmb_Perso_Ajout_Affectation.Name = "cmb_Perso_Ajout_Affectation";
             this.cmb_Perso_Ajout_Affectation.Size = new System.Drawing.Size(164, 21);
-            this.cmb_Perso_Ajout_Affectation.TabIndex = 8;
+            this.cmb_Perso_Ajout_Affectation.TabIndex = 12;
             // 
             // label8
             // 
@@ -358,21 +358,21 @@
             this.txt_Perso_Ajout_Mail.Location = new System.Drawing.Point(80, 96);
             this.txt_Perso_Ajout_Mail.Name = "txt_Perso_Ajout_Mail";
             this.txt_Perso_Ajout_Mail.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Mail.TabIndex = 6;
+            this.txt_Perso_Ajout_Mail.TabIndex = 11;
             // 
             // txt_Perso_Ajout_Tel
             // 
             this.txt_Perso_Ajout_Tel.Location = new System.Drawing.Point(80, 69);
             this.txt_Perso_Ajout_Tel.Name = "txt_Perso_Ajout_Tel";
             this.txt_Perso_Ajout_Tel.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Tel.TabIndex = 5;
+            this.txt_Perso_Ajout_Tel.TabIndex = 10;
             // 
             // txt_Perso_Ajout_Prenom
             // 
             this.txt_Perso_Ajout_Prenom.Location = new System.Drawing.Point(80, 42);
             this.txt_Perso_Ajout_Prenom.Name = "txt_Perso_Ajout_Prenom";
             this.txt_Perso_Ajout_Prenom.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Prenom.TabIndex = 4;
+            this.txt_Perso_Ajout_Prenom.TabIndex = 9;
             // 
             // label7
             // 
@@ -406,7 +406,7 @@
             this.txt_Perso_Ajout_Nom.Location = new System.Drawing.Point(80, 16);
             this.txt_Perso_Ajout_Nom.Name = "txt_Perso_Ajout_Nom";
             this.txt_Perso_Ajout_Nom.Size = new System.Drawing.Size(164, 20);
-            this.txt_Perso_Ajout_Nom.TabIndex = 0;
+            this.txt_Perso_Ajout_Nom.TabIndex = 8;
             // 
             // grp_Abs_Ajout
             // 
@@ -429,7 +429,7 @@
             this.btn_Abs_Ajout_Valider.Location = new System.Drawing.Point(50, 96);
             this.btn_Abs_Ajout_Valider.Name = "btn_Abs_Ajout_Valider";
             this.btn_Abs_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajout_Valider.TabIndex = 13;
+            this.btn_Abs_Ajout_Valider.TabIndex = 21;
             this.btn_Abs_Ajout_Valider.Text = "Valider";
             this.btn_Abs_Ajout_Valider.UseVisualStyleBackColor = true;
             this.btn_Abs_Ajout_Valider.Click += new System.EventHandler(this.btn_Abs_Ajout_Valider_Click);
@@ -440,14 +440,14 @@
             this.cmb_Abs_Ajout_Motif.Location = new System.Drawing.Point(93, 68);
             this.cmb_Abs_Ajout_Motif.Name = "cmb_Abs_Ajout_Motif";
             this.cmb_Abs_Ajout_Motif.Size = new System.Drawing.Size(194, 21);
-            this.cmb_Abs_Ajout_Motif.TabIndex = 6;
+            this.cmb_Abs_Ajout_Motif.TabIndex = 20;
             // 
             // btn_Abs_Ajout_Annuler
             // 
             this.btn_Abs_Ajout_Annuler.Location = new System.Drawing.Point(189, 96);
             this.btn_Abs_Ajout_Annuler.Name = "btn_Abs_Ajout_Annuler";
             this.btn_Abs_Ajout_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abs_Ajout_Annuler.TabIndex = 12;
+            this.btn_Abs_Ajout_Annuler.TabIndex = 22;
             this.btn_Abs_Ajout_Annuler.Text = "Annuler";
             this.btn_Abs_Ajout_Annuler.UseVisualStyleBackColor = true;
             this.btn_Abs_Ajout_Annuler.Click += new System.EventHandler(this.btn_Abs_Ajout_Annuler_Click);
@@ -466,7 +466,7 @@
             this.dtp_Abs_Fin.Location = new System.Drawing.Point(93, 42);
             this.dtp_Abs_Fin.Name = "dtp_Abs_Fin";
             this.dtp_Abs_Fin.Size = new System.Drawing.Size(194, 20);
-            this.dtp_Abs_Fin.TabIndex = 4;
+            this.dtp_Abs_Fin.TabIndex = 19;
             this.dtp_Abs_Fin.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
             // 
             // label11
@@ -484,7 +484,7 @@
             this.dtp_Abs_Debut.Location = new System.Drawing.Point(93, 16);
             this.dtp_Abs_Debut.Name = "dtp_Abs_Debut";
             this.dtp_Abs_Debut.Size = new System.Drawing.Size(194, 20);
-            this.dtp_Abs_Debut.TabIndex = 2;
+            this.dtp_Abs_Debut.TabIndex = 18;
             this.dtp_Abs_Debut.TabStop = false;
             this.dtp_Abs_Debut.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
             // 

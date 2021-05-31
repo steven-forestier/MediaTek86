@@ -109,8 +109,11 @@ namespace MediaTek86.Vue
         public void Remplir_lst_Perso()
         {
             List<Personnel> personnels = controle.GetPersonnels();
-            bdgPersonnel.DataSource = personnels;
-            lst_Perso.DataSource = bdgPersonnel;
+            lst_Perso.Items.Clear();
+            foreach (Personnel personnel in personnels)
+            {
+                lst_Perso.Items.Add(personnel.Nom + " - " + personnel.Prenom + " - " + personnel.Tel + " - " + personnel.Mail);
+            }
         }
 
         /// <summary>
@@ -119,8 +122,11 @@ namespace MediaTek86.Vue
         public void Remplir_lst_Absence(int id)
         {
             List<Absence> absences = controle.GetAbsences(id);
-            bdgAbsence.DataSource = absences;
-            lst_Abs.DataSource = bdgAbsence;
+            lst_Abs.Items.Clear();
+            foreach (Absence absence in absences)
+            {
+                lst_Abs.Items.Add(absence.IdMotif + " - " + absence.DateDebut + " - " + absence.DateFin);
+            }
         }
 
         /// <summary>
@@ -128,12 +134,11 @@ namespace MediaTek86.Vue
         /// </summary>
         public void Remplir_cmb_Motif()
         {
-            List<Motif> motif = controle.GetMotifs();
-            bdgMotif.DataSource = motif;
-            cmb_Abs_Ajout_Motif.DataSource = bdgMotif;
-            if(cmb_Abs_Ajout_Motif.Items.Count > 0)
+            List<Motif> motifs = controle.GetMotifs();
+            cmb_Abs_Ajout_Motif.Items.Clear();
+            foreach(Motif motif in motifs)
             {
-                cmb_Abs_Ajout_Motif.SelectedIndex = 0;
+                cmb_Abs_Ajout_Motif.Items.Add(motif.Libelle);
             }
         }
 
@@ -143,11 +148,10 @@ namespace MediaTek86.Vue
         public void Remplir_cmb_Affectation()
         {
             List<Service> services = controle.GetServices();
-            bdgAffectation.DataSource = services;
-            cmb_Perso_Ajout_Affectation.DataSource = bdgAffectation;
-            if(cmb_Perso_Ajout_Affectation.Items.Count > 0)
+            cmb_Perso_Ajout_Affectation.Items.Clear();
+            foreach (Service service in services)
             {
-                cmb_Perso_Ajout_Affectation.SelectedIndex = 0;
+                cmb_Perso_Ajout_Affectation.Items.Add(service.Nom);
             }
         }
 
@@ -160,12 +164,12 @@ namespace MediaTek86.Vue
         {
             if (lst_Perso.SelectedIndex != -1)
             {
-                Personnel perso = (Personnel)lst_Perso.SelectedItem;
+                Personnel perso = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 Remplir_lst_Absence(perso.IdPersonnel);
             }
             else
             {
-                lst_Abs.DataSource = null;
+                lst_Abs.Items.Clear();
             }
 
         }
@@ -237,7 +241,7 @@ namespace MediaTek86.Vue
         {
             if (lst_Perso.SelectedIndex != -1)
             {
-                Personnel personnel = (Personnel)lst_Perso.SelectedItem;
+                Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 txt_Perso_Ajout_Nom.Text = personnel.Nom;
                 txt_Perso_Ajout_Prenom.Text = personnel.Prenom;
                 txt_Perso_Ajout_Tel.Text = personnel.Tel;
@@ -295,14 +299,14 @@ namespace MediaTek86.Vue
                 return;
             }
 
-            Service service = (Service)cmb_Perso_Ajout_Affectation.SelectedItem;
+            Service service = controle.GetServices()[cmb_Perso_Ajout_Affectation.SelectedIndex];
             string nom = txt_Perso_Ajout_Nom.Text;
             string prenom = txt_Perso_Ajout_Prenom.Text;
             string tel = txt_Perso_Ajout_Tel.Text;
             string mail = txt_Perso_Ajout_Mail.Text;
             if (grp_Perso_Ajout.Text.Equals("Modifier Personnel"))
             {
-                Personnel personnel = (Personnel)lst_Perso.SelectedItem;
+                Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 Personnel perso = new Personnel(personnel.IdPersonnel, service.IdService, nom, prenom, tel, mail);
                 controle.ModifPersonnel(perso);
             }
@@ -311,6 +315,7 @@ namespace MediaTek86.Vue
                 Personnel perso = new Personnel(lst_Perso.Items.Count + 1, service.IdService, nom, prenom, tel, mail);
                 controle.AddPersonnel(perso);
             }
+            Remplir_lst_Perso();
             ClosePannel_Ajout_Perso();
         }
 
@@ -342,7 +347,7 @@ namespace MediaTek86.Vue
                 DialogResult dialog = MessageBox.Show("Cette action entraînera la suppression des données personnel et des absences de façon définitive. Continuer?", "Confirmation Suppression", MessageBoxButtons.OKCancel);
                 if (dialog == DialogResult.OK)
                 {
-                    Personnel perso = (Personnel)lst_Perso.SelectedItem;
+                    Personnel perso = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                     controle.SupprPersonnel(perso);
                     controle.SupprAbsencePersonnel(perso.IdPersonnel);
                     lst_Perso.DataSource = null;
@@ -417,7 +422,7 @@ namespace MediaTek86.Vue
         {
             if (lst_Abs.SelectedIndex != -1)
             {
-                Absence absence = (Absence)lst_Abs.SelectedItem;
+                Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
                 dtp_Abs_Debut.Value = absence.DateDebut;
                 dtp_Abs_Fin.Value = absence.DateFin;
                 cmb_Abs_Ajout_Motif.SelectedIndex = absence.IdMotif - 1;
@@ -470,19 +475,20 @@ namespace MediaTek86.Vue
 
             DateTime dateDebut = dtp_Abs_Debut.Value;
             DateTime dateFin = dtp_Abs_Fin.Value;
-            Motif motif = (Motif)cmb_Abs_Ajout_Motif.SelectedItem;
+            Motif motif = controle.GetMotifs()[cmb_Abs_Ajout_Motif.SelectedIndex];
             if (grp_Perso_Ajout.Text.Equals("Modifier Personnel"))
             {
-                Absence absence = (Absence)lst_Abs.SelectedItem;
+                Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
                 Absence abs = new Absence(absence.IdPersonnel, motif.IdMotif, dateDebut, dateFin);
                 controle.ModifAbsence(abs);
             }
             else
             {
-                Personnel personnel = (Personnel)lst_Perso.SelectedItem;
+                Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 Absence abs = new Absence(personnel.IdPersonnel, motif.IdMotif, dateDebut, dateFin);
                 controle.AddAbsence(abs);
             }
+            Remplir_lst_Absence(lst_Perso.SelectedIndex+1);
             ClosePannel_Ajout_Abs();
         }
 
@@ -514,9 +520,9 @@ namespace MediaTek86.Vue
                 DialogResult dialog = MessageBox.Show("Cette action entraînera la suppression des données d'absence de façon définitive. Continuer?", "Confirmation Suppression", MessageBoxButtons.OKCancel);
                 if (dialog == DialogResult.OK)
                 {
-                    Absence absence = (Absence)lst_Abs.SelectedItem;
+                    Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
                     controle.SupprAbsence(absence);
-                    Personnel personnel = (Personnel)lst_Perso.SelectedItem;
+                    Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                     Remplir_lst_Absence(personnel.IdPersonnel);
                 }
             }

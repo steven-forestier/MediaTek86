@@ -24,9 +24,7 @@ namespace MediaTek86.dal
         public static List<Personnel> GetLePersonnel()
         {
             List<Personnel> lePersonnel = new List<Personnel>();
-            string req = "select p.idpersonnel as idpersonnel, s.idservice as idservice, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail";
-            req += "from personnel as p join service s on (s.idservice = p.idservice)";
-            req += "order by nom, prenom";
+            string req = "select * from personnel order by nom, prenom";
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
             curseur.ReqSelect(req);
             while (curseur.Read())
@@ -45,7 +43,7 @@ namespace MediaTek86.dal
         public static List<Service> GetLesServices()
         {
             List<Service> lesServices = new List<Service>();
-            string req = "select * from service order by idservice";
+            string req = "select * from service order by idservice asc";
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
             curseur.ReqSelect(req);
             while (curseur.Read())
@@ -64,7 +62,7 @@ namespace MediaTek86.dal
         public static List<Motif> GetLesMotifs()
         {
             List<Motif> lesMotifs = new List<Motif>();
-            string req = "select * from motif order by idmotif";
+            string req = "select * from motif order by idmotif asc";
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
             curseur.ReqSelect(req);
             while (curseur.Read())
@@ -83,9 +81,7 @@ namespace MediaTek86.dal
         public static List<Absence> GetLesAbsences(int id)
         {
             List<Absence> lesAbsences = new List<Absence>();
-            string req = "select p.idpersonnel as idpersonnel, m.idmotif as idmotif, a.datedebut as datedebut, a.datefin as datefin";
-            req += "from absence where idpersonnel = @idpersonnel";
-            req += "order by datedebut";
+            string req = "select * from absence where idpersonnel = @idpersonnel order by datedebut";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@idpersonnel", id);
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
