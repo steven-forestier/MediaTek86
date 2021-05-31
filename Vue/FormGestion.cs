@@ -14,26 +14,6 @@ namespace MediaTek86.Vue
         private Controle controle;
 
         /// <summary>
-        /// Objet gérant la liste du personnel
-        /// </summary>
-        BindingSource bdgPersonnel = new BindingSource();
-
-        /// <summary>
-        /// Objet gérant la liste des absences
-        /// </summary>
-        BindingSource bdgAbsence = new BindingSource();
-
-        /// <summary>
-        /// Objet gérant la liste des motifs
-        /// </summary>
-        BindingSource bdgMotif = new BindingSource();
-
-        /// <summary>
-        /// Objet gérant la liste des affectations/services
-        /// </summary>
-        BindingSource bdgAffectation = new BindingSource();
-
-        /// <summary>
         /// Initialise les graphismes
         /// Récupère le controleur
         /// </summary>
@@ -97,6 +77,10 @@ namespace MediaTek86.Vue
             grp_Connect.Visible = false;
             // change l'utilisateur par l'identifiant
             lbl_Identifiant.Text = nom;
+            //par default, comme aucun membre du personnel n'est selectionné, les boutons d'ajout/modif/suppression d'absence sont désactivé.
+            btn_Abs_Ajouter.Enabled = false;
+            btn_Abs_Modifier.Enabled = false;
+            btn_Abs_Supprimer.Enabled = false;
             // remplis la list du personnel
             Remplir_lst_Perso();
             Remplir_cmb_Affectation();
@@ -168,10 +152,16 @@ namespace MediaTek86.Vue
             {
                 Personnel perso = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 Remplir_lst_Absence(perso.IdPersonnel);
+                btn_Abs_Ajouter.Enabled = true;
+                btn_Abs_Modifier.Enabled = true;
+                btn_Abs_Supprimer.Enabled = true;
             }
             else
             {
                 lst_Abs.Items.Clear();
+                btn_Abs_Ajouter.Enabled = false;
+                btn_Abs_Modifier.Enabled = false;
+                btn_Abs_Supprimer.Enabled = false;
             }
 
         }
@@ -347,7 +337,7 @@ namespace MediaTek86.Vue
             if (lst_Perso.SelectedIndex != -1)
             {
                 DialogResult dialog = MessageBox.Show("Cette action entraînera la suppression des données personnel et des absences de façon définitive. Continuer?", "Confirmation Suppression", MessageBoxButtons.OKCancel);
-                if (dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK && !VerifPersoParam())
                 {
                     Personnel perso = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                     controle.SupprPersonnel(perso);
@@ -356,6 +346,13 @@ namespace MediaTek86.Vue
                     Remplir_lst_Perso();
                     lst_Abs.Items.Clear();
                     lst_Perso.SelectedIndex = -1;
+                    btn_Abs_Ajouter.Enabled = false;
+                    btn_Abs_Modifier.Enabled = false;
+                    btn_Abs_Supprimer.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez remplir tout les paramètres");
                 }
             }
             else
@@ -424,7 +421,7 @@ namespace MediaTek86.Vue
         {
             if (lst_Abs.SelectedIndex != -1)
             {
-                Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
+                Absence absence = controle.GetAbsences(controle.GetPersonnels()[lst_Perso.SelectedIndex].IdPersonnel)[lst_Abs.SelectedIndex];
                 dtp_Abs_Debut.Value = absence.DateDebut;
                 dtp_Abs_Fin.Value = absence.DateFin;
                 cmb_Abs_Ajout_Motif.SelectedIndex = absence.IdMotif - 1;
@@ -477,6 +474,12 @@ namespace MediaTek86.Vue
 
             DateTime dateDebut = dtp_Abs_Debut.Value;
             DateTime dateFin = dtp_Abs_Fin.Value;
+            if(!VerifieAnomalieDates(dateDebut, dateFin))
+            {
+                MessageBox.Show("La date de fin ne peut être antérieure à la date de début");
+                return;
+            }
+
             Motif motif = controle.GetMotifs()[cmb_Abs_Ajout_Motif.SelectedIndex];
             if (grp_Perso_Ajout.Text.Equals("Modifier Personnel"))
             {
@@ -490,9 +493,28 @@ namespace MediaTek86.Vue
                 Absence abs = new Absence(personnel.IdPersonnel, motif.IdMotif, dateDebut, dateFin);
                 controle.AddAbsence(abs);
             }
-            Remplir_lst_Absence(lst_Perso.SelectedIndex+1);
+            Remplir_lst_Absence(controle.GetPersonnels()[lst_Perso.SelectedIndex].IdPersonnel);
             ClosePannel_Ajout_Abs();
         }
+
+        /// <summary>
+        /// Vérifie si la date de fin est bien après la date de début
+        /// </summary>
+        /// <param name="datedebut"></param>
+        /// <param name="datefin"></param>
+        /// <returns>vrai si les dates suive un ordre chronologique</returns>
+        private bool VerifieAnomalieDates(DateTime datedebut, DateTime datefin)
+        {
+            if (datedebut < datefin)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// retourne vrai si tout les parametres d'ajout/modification d'absence sont bien remplis
@@ -520,12 +542,16 @@ namespace MediaTek86.Vue
             if (lst_Abs.SelectedIndex != -1)
             {
                 DialogResult dialog = MessageBox.Show("Cette action entraînera la suppression des données d'absence de façon définitive. Continuer?", "Confirmation Suppression", MessageBoxButtons.OKCancel);
-                if (dialog == DialogResult.OK)
+                if (dialog == DialogResult.OK && VerifAbsParam())
                 {
                     Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
                     controle.SupprAbsence(absence);
                     Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                     Remplir_lst_Absence(personnel.IdPersonnel);
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez remplir tout les paramètres");
                 }
             }
             else

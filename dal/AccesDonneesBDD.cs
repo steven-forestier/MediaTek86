@@ -81,7 +81,7 @@ namespace MediaTek86.dal
         public static List<Absence> GetLesAbsences(int id)
         {
             List<Absence> lesAbsences = new List<Absence>();
-            string req = "select * from absence where idpersonnel = @idpersonnel order by datedebut";
+            string req = "select * from absence where idpersonnel = @idpersonnel order by datedebut desc";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@idpersonnel", id);
             ConnectionBDD curseur = ConnectionBDD.GetInstance(chaineConnexion);
