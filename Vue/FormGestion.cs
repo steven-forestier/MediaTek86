@@ -69,8 +69,10 @@ namespace MediaTek86.Vue
             // la boite de connection est rendu visible et est activé.
             grp_Connect.Enabled = true;
             grp_Connect.Visible = true;
-            // le message d'erreur est mis à zéro
+            // le message d'erreur et les boites de saisie de l'identifiant et le mot de passe sont vidée
             lbl_error.Text = "";
+            txt_Identifiant.Text = "";
+            txt_MotDePasse.Text = "";
             // met le focus sur la boite texte identifiant
             txt_Identifiant.Focus();
         }
@@ -352,8 +354,8 @@ namespace MediaTek86.Vue
                     controle.SupprAbsencePersonnel(perso.IdPersonnel);
                     lst_Perso.DataSource = null;
                     Remplir_lst_Perso();
+                    lst_Abs.Items.Clear();
                     lst_Perso.SelectedIndex = -1;
-                    lst_Abs.DataSource = null;
                 }
             }
             else
@@ -543,9 +545,15 @@ namespace MediaTek86.Vue
         /// <param name="e"></param>
         private void btn_Connect_Click(object sender, EventArgs e)
         {
-            if(!txt_Identifiant.Text.Equals("") && !txt_MotDePasse.Text.Equals(""))
+            EssaiConnexion();
+        }
+
+
+        private void EssaiConnexion()
+        {
+            if (!txt_Identifiant.Text.Equals("") && !txt_MotDePasse.Text.Equals(""))
             {
-                if(!controle.ControleIdentite(txt_Identifiant.Text, txt_MotDePasse.Text))
+                if (!controle.ControleIdentite(txt_Identifiant.Text, txt_MotDePasse.Text))
                 {
                     lbl_error.Text = "Identifiant ou Mot de passe invalide!";
                     txt_Identifiant.Text = "";
@@ -572,16 +580,37 @@ namespace MediaTek86.Vue
         private void btn_Deconnect_Click(object sender, EventArgs e)
         {
             StatusDepart();
-            lst_Perso.DataSource = null;
-            lst_Abs.DataSource = null;
+            lst_Perso.Items.Clear();
+            lst_Abs.Items.Clear();
         }
 
+        /// <summary>
+        /// Offre la possibilité de connexion en pressant entrer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_Identifiant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                EssaiConnexion();
+            }
+        }
 
-
-
+        /// <summary>
+        /// Offre la possibilité de connexion en pressant entrer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_MotDePasse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                EssaiConnexion();
+            }
+        }
 
         #endregion
 
-        
     }
 }

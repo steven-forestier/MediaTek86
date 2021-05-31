@@ -161,11 +161,10 @@ namespace MediaTek86.dal
         /// <param name="personnel"></param>
         public static void MajPersonnel(Personnel personnel)
         {
-            string req = "update personnel set idservice = @idservice, nom = @nom, prenom = @prenom, tel = @tel, mail = @mail ";
-            req += "where idpersonnel = @idpersonnel;";
+            string req = "update personnel set idservice = @idservice, nom = @nom, prenom = @prenom, tel = @tel, mail = @mail where idpersonnel = @idpersonnel;";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@idpersonnel", personnel.IdPersonnel);
-            parameters.Add("@idsevice", personnel.IdService);
+            parameters.Add("@idservice", personnel.IdService);
             parameters.Add("@nom", personnel.Nom);
             parameters.Add("@prenom", personnel.Prenom);
             parameters.Add("@tel", personnel.Tel);

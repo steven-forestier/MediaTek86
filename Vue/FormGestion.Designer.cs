@@ -215,7 +215,7 @@
             // lbl_Identifiant
             // 
             this.lbl_Identifiant.AutoSize = true;
-            this.lbl_Identifiant.Location = new System.Drawing.Point(63, 16);
+            this.lbl_Identifiant.Location = new System.Drawing.Point(73, 16);
             this.lbl_Identifiant.Name = "lbl_Identifiant";
             this.lbl_Identifiant.Size = new System.Drawing.Size(53, 13);
             this.lbl_Identifiant.TabIndex = 0;
@@ -260,6 +260,7 @@
             this.txt_Identifiant.Name = "txt_Identifiant";
             this.txt_Identifiant.Size = new System.Drawing.Size(150, 20);
             this.txt_Identifiant.TabIndex = 1;
+            this.txt_Identifiant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identifiant_KeyPress);
             // 
             // label1
             // 
@@ -276,6 +277,7 @@
             this.txt_MotDePasse.Name = "txt_MotDePasse";
             this.txt_MotDePasse.Size = new System.Drawing.Size(150, 20);
             this.txt_MotDePasse.TabIndex = 2;
+            this.txt_MotDePasse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MotDePasse_KeyPress);
             // 
             // btn_Connect
             // 
