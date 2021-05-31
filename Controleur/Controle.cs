@@ -7,7 +7,7 @@ using MediaTek86.Vue;
 
 namespace MediaTek86.Controleur
 {
-    class Controle
+    public class Controle
     {
         private FormGestion formGestion;
 

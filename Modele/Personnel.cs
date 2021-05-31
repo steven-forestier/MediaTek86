@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.Modele
 {
-    class Personnel
+    public class Personnel
     {
         private int idPersonnel;
         private int idService;

@@ -9,7 +9,7 @@ namespace MediaTek86.dal
     /// <summary>
     /// Classe permettant de gérer les demandes concernant les données distantes
     /// </summary>
-    class AccesDonneesBDD
+    public class AccesDonneesBDD
     {
         /// <summary>
         /// chaine de connexion à la DBB

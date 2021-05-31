@@ -14,11 +14,6 @@ namespace MediaTek86.Vue
         private Controle controle;
 
         /// <summary>
-        /// Booléen pour savoir si une modification est en cours
-        /// </summary>
-        private Boolean modifEnCours = false;
-
-        /// <summary>
         /// Objet gérant la liste du personnel
         /// </summary>
         BindingSource bdgPersonnel = new BindingSource();
@@ -134,8 +129,8 @@ namespace MediaTek86.Vue
         public void Remplir_cmb_Motif()
         {
             List<Motif> motif = controle.GetMotifs();
-            bdgAbsence.DataSource = motif;
-            cmb_Abs_Ajout_Motif.DataSource = bdgAbsence;
+            bdgMotif.DataSource = motif;
+            cmb_Abs_Ajout_Motif.DataSource = bdgMotif;
             if(cmb_Abs_Ajout_Motif.Items.Count > 0)
             {
                 cmb_Abs_Ajout_Motif.SelectedIndex = 0;

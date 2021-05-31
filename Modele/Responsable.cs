@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaTek86.Modele
 {
-    class Responsable
+    public class Responsable
     {
         private string login;
         private string pwd;
