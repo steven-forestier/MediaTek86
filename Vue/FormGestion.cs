@@ -49,6 +49,8 @@ namespace MediaTek86.Vue
             // la boite de connection est rendu visible et est activé.
             grp_Connect.Enabled = true;
             grp_Connect.Visible = true;
+            // Affichage d'une image pour combler l'espace vide
+            pct_MediaTek86.Visible = true;
             // le message d'erreur et les boites de saisie de l'identifiant et le mot de passe sont vidée
             lbl_error.Text = "";
             txt_Identifiant.Text = "";
@@ -81,6 +83,8 @@ namespace MediaTek86.Vue
             btn_Abs_Ajouter.Enabled = false;
             btn_Abs_Modifier.Enabled = false;
             btn_Abs_Supprimer.Enabled = false;
+            // Cache l'image de fond d'écran
+            pct_MediaTek86.Visible = false;
             // remplis la list du personnel
             Remplir_lst_Perso();
             Remplir_cmb_Affectation();
@@ -108,10 +112,11 @@ namespace MediaTek86.Vue
         public void Remplir_lst_Absence(int id)
         {
             List<Absence> absences = controle.GetAbsences(id);
+            List<Motif> motifs = controle.GetMotifs();
             lst_Abs.Items.Clear();
             foreach (Absence absence in absences)
             {
-                lst_Abs.Items.Add(absence.IdMotif + " - " + absence.DateDebut + " - " + absence.DateFin);
+                lst_Abs.Items.Add(absence.DateDebut + " - " + absence.DateFin + " - " + absence.IdMotif + "." + motifs[absence.IdMotif-1].Libelle);
             }
         }
 
@@ -637,6 +642,5 @@ namespace MediaTek86.Vue
         }
 
         #endregion
-
     }
 }

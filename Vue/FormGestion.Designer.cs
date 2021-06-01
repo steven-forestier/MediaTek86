@@ -71,12 +71,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dtp_Abs_Debut = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.pct_MediaTek86 = new System.Windows.Forms.PictureBox();
             this.grp_Perso.SuspendLayout();
             this.grp_Abs.SuspendLayout();
             this.grp_Deconnect.SuspendLayout();
             this.grp_Connect.SuspendLayout();
             this.grp_Perso_Ajout.SuspendLayout();
             this.grp_Abs_Ajout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_MediaTek86)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_Perso
@@ -114,7 +116,7 @@
             // 
             // btn_Perso_Ajouter
             // 
-            this.btn_Perso_Ajouter.Location = new System.Drawing.Point(8, 381);
+            this.btn_Perso_Ajouter.Location = new System.Drawing.Point(8, 380);
             this.btn_Perso_Ajouter.Name = "btn_Perso_Ajouter";
             this.btn_Perso_Ajouter.Size = new System.Drawing.Size(75, 23);
             this.btn_Perso_Ajouter.TabIndex = 5;
@@ -139,7 +141,7 @@
             this.grp_Abs.Controls.Add(this.btn_Abs_Ajouter);
             this.grp_Abs.Location = new System.Drawing.Point(521, 12);
             this.grp_Abs.Name = "grp_Abs";
-            this.grp_Abs.Size = new System.Drawing.Size(293, 410);
+            this.grp_Abs.Size = new System.Drawing.Size(380, 410);
             this.grp_Abs.TabIndex = 1;
             this.grp_Abs.TabStop = false;
             this.grp_Abs.Text = "Absence";
@@ -159,7 +161,7 @@
             this.lst_Abs.FormattingEnabled = true;
             this.lst_Abs.Location = new System.Drawing.Point(6, 16);
             this.lst_Abs.Name = "lst_Abs";
-            this.lst_Abs.Size = new System.Drawing.Size(281, 355);
+            this.lst_Abs.Size = new System.Drawing.Size(368, 355);
             this.lst_Abs.TabIndex = 4;
             // 
             // btn_Abs_Modifier
@@ -422,13 +424,13 @@
             this.grp_Abs_Ajout.Controls.Add(this.label10);
             this.grp_Abs_Ajout.Location = new System.Drawing.Point(521, 428);
             this.grp_Abs_Ajout.Name = "grp_Abs_Ajout";
-            this.grp_Abs_Ajout.Size = new System.Drawing.Size(293, 181);
+            this.grp_Abs_Ajout.Size = new System.Drawing.Size(380, 144);
             this.grp_Abs_Ajout.TabIndex = 5;
             this.grp_Abs_Ajout.TabStop = false;
             // 
             // btn_Abs_Ajout_Valider
             // 
-            this.btn_Abs_Ajout_Valider.Location = new System.Drawing.Point(50, 96);
+            this.btn_Abs_Ajout_Valider.Location = new System.Drawing.Point(107, 96);
             this.btn_Abs_Ajout_Valider.Name = "btn_Abs_Ajout_Valider";
             this.btn_Abs_Ajout_Valider.Size = new System.Drawing.Size(75, 23);
             this.btn_Abs_Ajout_Valider.TabIndex = 21;
@@ -441,12 +443,12 @@
             this.cmb_Abs_Ajout_Motif.FormattingEnabled = true;
             this.cmb_Abs_Ajout_Motif.Location = new System.Drawing.Point(93, 68);
             this.cmb_Abs_Ajout_Motif.Name = "cmb_Abs_Ajout_Motif";
-            this.cmb_Abs_Ajout_Motif.Size = new System.Drawing.Size(194, 21);
+            this.cmb_Abs_Ajout_Motif.Size = new System.Drawing.Size(281, 21);
             this.cmb_Abs_Ajout_Motif.TabIndex = 20;
             // 
             // btn_Abs_Ajout_Annuler
             // 
-            this.btn_Abs_Ajout_Annuler.Location = new System.Drawing.Point(189, 96);
+            this.btn_Abs_Ajout_Annuler.Location = new System.Drawing.Point(253, 95);
             this.btn_Abs_Ajout_Annuler.Name = "btn_Abs_Ajout_Annuler";
             this.btn_Abs_Ajout_Annuler.Size = new System.Drawing.Size(75, 23);
             this.btn_Abs_Ajout_Annuler.TabIndex = 22;
@@ -467,7 +469,7 @@
             // 
             this.dtp_Abs_Fin.Location = new System.Drawing.Point(93, 42);
             this.dtp_Abs_Fin.Name = "dtp_Abs_Fin";
-            this.dtp_Abs_Fin.Size = new System.Drawing.Size(194, 20);
+            this.dtp_Abs_Fin.Size = new System.Drawing.Size(281, 20);
             this.dtp_Abs_Fin.TabIndex = 19;
             this.dtp_Abs_Fin.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
             // 
@@ -485,7 +487,7 @@
             this.dtp_Abs_Debut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_Abs_Debut.Location = new System.Drawing.Point(93, 16);
             this.dtp_Abs_Debut.Name = "dtp_Abs_Debut";
-            this.dtp_Abs_Debut.Size = new System.Drawing.Size(194, 20);
+            this.dtp_Abs_Debut.Size = new System.Drawing.Size(281, 20);
             this.dtp_Abs_Debut.TabIndex = 18;
             this.dtp_Abs_Debut.TabStop = false;
             this.dtp_Abs_Debut.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
@@ -499,17 +501,28 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Date de début :";
             // 
+            // pct_MediaTek86
+            // 
+            this.pct_MediaTek86.ErrorImage = global::MediaTek86.Properties.Resources.infotech_02;
+            this.pct_MediaTek86.Image = global::MediaTek86.Properties.Resources.infotech_02;
+            this.pct_MediaTek86.Location = new System.Drawing.Point(258, 12);
+            this.pct_MediaTek86.Name = "pct_MediaTek86";
+            this.pct_MediaTek86.Size = new System.Drawing.Size(643, 597);
+            this.pct_MediaTek86.TabIndex = 6;
+            this.pct_MediaTek86.TabStop = false;
+            // 
             // FormGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 621);
+            this.ClientSize = new System.Drawing.Size(913, 621);
             this.Controls.Add(this.grp_Abs_Ajout);
             this.Controls.Add(this.grp_Perso_Ajout);
             this.Controls.Add(this.grp_Connect);
             this.Controls.Add(this.grp_Deconnect);
             this.Controls.Add(this.grp_Abs);
             this.Controls.Add(this.grp_Perso);
+            this.Controls.Add(this.pct_MediaTek86);
             this.Name = "FormGestion";
             this.Text = "Gestion Du Personnel MediaTek86";
             this.grp_Perso.ResumeLayout(false);
@@ -522,6 +535,7 @@
             this.grp_Perso_Ajout.PerformLayout();
             this.grp_Abs_Ajout.ResumeLayout(false);
             this.grp_Abs_Ajout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_MediaTek86)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,6 +585,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtp_Abs_Debut;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pct_MediaTek86;
     }
 }
 
