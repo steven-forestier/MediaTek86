@@ -486,15 +486,15 @@ namespace MediaTek86.Vue
             }
 
             Motif motif = controle.GetMotifs()[cmb_Abs_Ajout_Motif.SelectedIndex];
-            if (grp_Perso_Ajout.Text.Equals("Modifier Personnel"))
+            Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
+            if (grp_Abs_Ajout.Text.Equals("Modifier une Absence"))
             {
-                Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
+                Absence absence = controle.GetAbsences(personnel.IdPersonnel)[lst_Abs.SelectedIndex];
                 Absence abs = new Absence(absence.IdPersonnel, motif.IdMotif, dateDebut, dateFin);
                 controle.ModifAbsence(abs);
             }
             else
             {
-                Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
                 Absence abs = new Absence(personnel.IdPersonnel, motif.IdMotif, dateDebut, dateFin);
                 controle.AddAbsence(abs);
             }
@@ -510,7 +510,7 @@ namespace MediaTek86.Vue
         /// <returns>vrai si les dates suive un ordre chronologique</returns>
         private bool VerifieAnomalieDates(DateTime datedebut, DateTime datefin)
         {
-            if (datedebut < datefin)
+            if (datedebut <= datefin)
             {
                 return true;
             }
@@ -547,16 +547,12 @@ namespace MediaTek86.Vue
             if (lst_Abs.SelectedIndex != -1)
             {
                 DialogResult dialog = MessageBox.Show("Cette action entraînera la suppression des données d'absence de façon définitive. Continuer?", "Confirmation Suppression", MessageBoxButtons.OKCancel);
-                if (dialog == DialogResult.OK && VerifAbsParam())
+                if (dialog == DialogResult.OK)
                 {
-                    Absence absence = controle.GetAbsences(lst_Perso.SelectedIndex+1)[lst_Abs.SelectedIndex];
-                    controle.SupprAbsence(absence);
                     Personnel personnel = controle.GetPersonnels()[lst_Perso.SelectedIndex];
+                    Absence absence = controle.GetAbsences(personnel.IdPersonnel)[lst_Abs.SelectedIndex];
+                    controle.SupprAbsence(absence);
                     Remplir_lst_Absence(personnel.IdPersonnel);
-                }
-                else
-                {
-                    MessageBox.Show("Veuillez remplir tout les paramètres");
                 }
             }
             else
